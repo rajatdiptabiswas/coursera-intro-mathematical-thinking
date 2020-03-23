@@ -1,0 +1,450 @@
+% Author:       Rajat Dipta Biswas
+% Assignment:   Test Flight Peer Assessment
+% Course:       Introduction to Mathematical Thinking
+% Instructor:   Keith Devlin
+% Date:         March 2020
+
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\pagestyle{fancy}
+
+\setlength{\headheight}{15pt}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+
+\lhead{Introduction to Mathematical Thinking}
+\rhead{Test Flight Peer Assessment}
+
+\pagenumbering{gobble}
+ 
+% \maketitle
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+ 
+\begin{problem}{1} %You can use theorem, proposition, exercise, or reflection here.
+    Say whether the following is true or false and support your answer by a proof. 
+    $$(\exists m \in \N) (\exists n \in \N) (3m+5n = 12)$$
+\end{problem}
+ 
+\begin{proof}
+By contradiction.
+
+The negation of the proposition will be
+$$(\forall m \in \N) (\forall n \in \N) (3m+5n \neq 12)$$
+
+We will need to show that the above is TRUE.
+
+The natural numbers start from 1 and do not include 0.
+$$ \N = \{1,2,3,4,5,...\} $$
+Rearranging the equation in the original proposition to get the value of $n$ on the left hand side
+\begin{align*}
+     3m+5n &= 12 \\
+    \implies 5n &= 12 - 3m &&\text{[Subtracting both sides by 3$m$]} \\
+    \implies 5n &= 3(4-m) &&\text{[Factoring out the common factor 3]} \\
+    \implies n &= \frac{3}{5}(4-m) &&\text{[Dividing both sides by 5]}
+\end{align*}
+For $n$ to be in the natural numbers, it must be the case that $5 | (4-m)$ i.e.
+$$(x \in \N)(4 - m = 5x)$$
+Taking the smallest value of $x$ i.e. $x=1$. We have
+\begin{align*}
+    4-m &= 5 \\
+    \implies 4 &= 5+m &&\text{[Adding $m$ to both sides]} \\
+    \implies m &= -1 &&\text{[Subtracting 5 from both sides]}
+\end{align*}
+But the above conclusion is FALSE by the definition of $m$, i.e. $m \in \N$ ($-1 \notin \N$).
+Larger values of $x$ will give even smaller values of $m$.
+
+\hfill \break
+Hence for all values of $m$ and $n$, the negation $3m+5n \neq 12$ is TRUE which means that the original proposition was \textbf{FALSE}.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+ 
+\begin{problem}{2}
+    Say whether the following is true or false and support your answer by a proof: The sum of any five consecutive integers is divisible by 5 (without remainder).  
+\end{problem}
+ 
+\begin{proof}[Proof]%Whatever you put in the square brackets will be the label for the block of text to follow in the proof environment.
+Let $n$ be any arbitrary integer.
+
+Taking the first 5 integers 1, 2, 3, 4, 5, we have the summation to be
+$$1+2+3+4+5=15$$
+15 is divisible by 5, so the statement seems true.
+
+The let $n$ be the first integer of the 5 consecutive integers. The 5 integers will then be $n$, $n+1$, $n+2$, $n+3$, and $n+4$.
+
+Hence
+\begin{align*}
+    n + (n + 1) + (n + 2) + (n + 3) + (n + 4) &= 5n + 10 \\
+    &= 5(n+2)\text{\,[Factoring out the common factor 5]}
+\end{align*}
+$5(n+2)$ is divisible by 5.
+
+\hfill \break
+Hence the sum of any five consecutive integers is divisible by 5 which proves that the original statement is \textbf{TRUE}.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{3}
+    Say whether the following is true or false and support your answer by a proof: For any integer $n$, the number $n^2+n+1$ is odd.
+\end{problem}
+
+\begin{proof}
+By cases.
+
+For $n = -2$,
+$$n^2+n+1 = (-2)^2+(-2)+1 = 3$$
+For $n = -1$,
+$$n^2+n+1 = (-1)^2+(-1)+1 = 1$$
+For $n = 0$,
+$$n^2+n+1 = (0)^2+(0)+1 = 1$$
+For $n = 1$,
+$$n^2+n+1 = (1)^2+(1)+1 = 3$$
+
+1 and 3 are odd numbers, so the statement seems true.
+
+Using the equation we have,
+\begin{align*}
+    &n^2+n+1 = n(n+1) + 1 \text{\quad[Factoring out the common factor n]}
+\end{align*}
+Let $n$ be any arbitrary integer. So $n+1$ is the consecutive number.
+
+There can be two cases then
+\begin{itemize}
+    \item \textbf{Case 1 ($n$ is odd)} \\
+    If $n$ is odd, $n+1$ has to be even. \\
+    odd $\times$ even = even. \\
+    even + 1 is an odd number. \\
+    Hence, if $n$ is odd, $n^2+n+1$ is odd and our initial statement is \textbf{TRUE}.
+    \item \textbf{Case 2 ($n$ is even)} \\
+    If $n$ is even, $n+1$ has to be odd. \\
+    even $\times$ odd = even. \\
+    even + 1 is an odd number. \\
+    Hence, if $n$ is even, $n^2+n+1$ is also odd and our initial statement is \textbf{TRUE} yet again.
+\end{itemize}
+\hfill \break
+$\therefore$ It has been proved that for any integer $n$, $n^2+n+1$ is odd.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{4}
+    Prove that every odd natural number is of one of the forms $4n + 1$ or $4n + 3$, where $n$ is an integer.
+\end{problem}
+
+\begin{proof}
+By using the definition that every odd number can be written in the form $2k+1$, where $k$ is an integer.
+
+Trying out the expressions for $n=0$
+\begin{align*}
+    4n+1 &= 4(0)+1 \\
+         &= 1 \\
+    4n+3 &= 4(0)+3 \\
+         &= 3
+\end{align*}
+1 and 3 are odd numbers. They can be expressed in the form of $4n + 1$ and $4n + 3$ so the statement seems true.
+
+\hfill \break
+If $2k+1$ can be written in the forms $4n+1$ and $4n+3$, the theorem will be proved.
+
+\hfill \break
+There can be two cases. Either $k$ is even or $k$ is odd.
+\begin{itemize}
+    \item \textbf{Case 1 ($k$ is even)}
+    
+    Since $k$ is even, it can written as $k=2n$, where $n$ is an integer.
+    \begin{align*}
+        2k+1 &= 2(2n)+1 &&\text{[Substituting $k=2n$ in $2k+1$]} \\
+             &= 4n + 1
+    \end{align*}
+    Hence, some of the odd numbers can be written in the form $4n+1$.
+    
+    \item \textbf{Case 2 ($k$ is odd)}
+
+    Since $k$ is odd, it can written as $k=2n+1$, where $n$ is an integer.
+    \begin{align*}
+        2k+1 &= 2(2n+1)+1 &&\text{[Substituting $k=2n+1$ in $2k+1$]} \\
+             &= 4n + 3
+    \end{align*}
+    Hence, the remaining odd numbers can be written in the form $4n+3$.
+\end{itemize}
+
+\hfill \break
+$\therefore$ It is proved that every odd natural number is either of the forms $4n + 1$ or $4n + 3$, where $n$ is an integer.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{5}
+Prove that for any integer $n$, at least one of the integers $n$, $n + 2$, $n + 4$ is divisible by 3.
+\end{problem}
+
+\begin{proof}
+By induction and cases.
+
+\hfill \break
+\textbf{Base case}
+
+When $n=1$, the integers $n$, $n+2$, and $n+4$ are 1, 3, and 5 respectively. 3 is divisible by 3. Hence, the statement holds.
+
+When $n=2$, the integers $n$, $n+2$, and $n+4$ are 2, 4, and 6 respectively. Here, 6 is divisible by 3. The statement holds yet again.
+
+\hfill \break
+\textbf{Induction step}
+
+We assume that the statement holds for $n=k$.
+
+We need to prove that the statement holds for the case when $n=k+1$.
+
+\hfill \break
+When $n=k$, either
+\begin{itemize}
+    \item $3 | k$ \\
+    i.e. $(q \in \N)(k = 3q)$ \\
+    $\therefore$ $k = 3q$ \quad or,
+    \item $3 | (k+2)$ \\
+    i.e. $(q \in \N)(k + 2 = 3q)$ \\
+    $\implies$ $k = 3q - 2$ \quad or,
+    \item $3 | (k+4)$ \\
+    i.e. $(q \in \N)(k + 4 = 3q)$ \\
+    $\implies$ $k = 3q - 4$
+\end{itemize}
+
+\hfill \break
+For $n=k+1$, the integers are $k+1$, $k+3$, and $k+5$.
+
+There can be 3 cases,
+\begin{itemize}
+    \item If $3|k$, i.e. $k=3q$, then the integers are $3q+1$, $3q+3$, and $3q+5$. (Substituting $k=3q$ in $k+1$, $k+3$, and $k+5$)
+    
+    In this case, the second integer, $3q+3 \implies 3(q+1)$ is divisible by 3. \\
+    Hence the statement is \textbf{TRUE}.
+    \item If $3|k+2$, i.e. $k=3q-2$, then the integers are $3q-1$, $3q+1$, and $3q+3$. (Substituting $k=3q-2$ in $k+1$, $k+3$, and $k+5$)
+    
+    In this case, the third integer, $3q+3 \implies 3(q+1)$ is divisible by 3. \\
+    Hence the statement is \textbf{TRUE}.
+    \item If $3|k+4$, i.e. $k=3q-4$, then the integers are $3q-3$, $3q-1$, and $3q+1$. (Substituting $k=3q-4$ in $k+1$, $k+3$, and $k+5$)
+    
+    In this case, the first integer, $3q-3 \implies 3(q-1)$ is divisible by 3. \\
+    Hence the statement is \textbf{TRUE}.
+\end{itemize}
+
+\hfill \break
+Since the statement is true for all the three cases, by the principle of mathematical induction, the theorem is proved.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{6}
+    A classic unsolved problem in number theory asks if there are infinitely many pairs of ‘twin primes’, pairs of primes separated by 2, such as 3 and 5, 11 and 13, or 71 and 73. Prove that the only prime triple (i.e. three primes, each 2 from the next) is 3, 5, 7.
+\end{problem}
+
+\begin{proof}
+By using the theorem in Problem 5 and definition of primes.
+
+\hfill \break
+The definition of prime number states that \\
+``A prime number is a positive integer $n$, greater than 1, whose only exact divisors are 1 and $n$"
+
+The theorem in Problem 5 states that \\
+``For any integer $n$, at least one of the integers $n$, $n + 2$, $n + 4$ is divisible by 3"
+
+\hfill \break
+If $n$ is the first of the 3 integers that are separated by 2, then we have the integers $n$, $n + 2$, and $n + 4$.
+
+However using the theorem in Problem 5, we know that one of these three integers must be divisible by 3.
+
+The integers 3, 5 and 7 form a prime triple because the integer that is divisible by 3, in this case, is 3 itself. 3 is a prime number. 
+
+Every integer in the set of integers \{$n$, $n + 2$, $n + 4$\} greater than this, that is divisible by 3, will have to be a multiple of 3 and cannot therefore be a prime number.
+
+For example when $n=5$, we have 5, 7, and 9. Here, 9 is divisible by 3 and hence not a prime number. Taking other examples greater than this, will also give the same result.
+
+\hfill \break
+Hence it is proved that 3, 5, and 7 is the only prime triple.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{7}
+    Prove that for any natural number n,
+    \begin{align*}
+        2+2^2 +2^3 + ... + 2^n = 2^{n+1} - 2
+    \end{align*}
+\end{problem}
+
+\begin{proof}
+By induction.
+
+The expression in the left hand side can be written as $\sum_{i=1}^{n} 2^{i}$
+
+\hfill \break
+\textbf{Base case} \quad When $n=1$, the left hand side is 2. Simplifying the right hand side,
+\begin{align*}
+    2^{(1)+1} - 2 &= 2^2 - 2 \\
+    &= 2
+\end{align*}
+So, the identity is valid for $n=1$.
+
+\hfill \break
+\textbf{Induction step} \quad Assume that the identity holds for $n=k$. Then,
+\begin{align*}
+    \sum_{i=1}^{k} 2^{i} = 2^{k+1} - 2
+\end{align*}
+
+Then, for $n=k+1$
+\begin{align*}
+    \sum_{i=1}^{k+1} 2^{i} &= \sum_{i=1}^{k} 2^{i} + 2^{k+1} \\
+                           &= (2^{k+1} - 2) + 2^{k+1} &&\text{[Using the induction step]} \\
+                           &= 2(2^{k+1}) - 2 \\
+                           &= 2^{k+2} - 2
+\end{align*}
+Which is the expression to be expected if $n=k+1$.
+
+\hfill \break
+Hence, by the principle of mathematical induction, the theorem is proved.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{8}
+    Prove (from the definition of a limit of a sequence) that if the sequence $\{a_n\}_{n=1}^{\infty}$ tends to limit $L$ as $n\to\infty$, then for any fixed number $M > 0$, the sequence $\{Ma_n\}_{n=1}^{\infty}$ tends to the limit $ML$.
+\end{problem}
+
+\begin{proof}
+Using $\epsilon$ definition of limits.
+
+Writing the theorem formally,
+\begin{align*}
+    &(\forall \epsilon > 0)(\exists N \in \N)(\forall n \geq N)[|a_n - L| < \epsilon] \\
+    &\implies (\forall M > 0)(\forall \epsilon > 0)(\exists N \in \N)(\forall n \geq N)[|Ma_n - ML| < \epsilon]
+\end{align*}
+
+Let $\epsilon > 0$ be given. Using the initial assumption, for all $n \geq N$, we can find an $n$ such that
+\begin{align*}
+    |a_n - L| < \frac{\epsilon}{M}
+\end{align*}
+Hence, for all $n \geq N$,
+\begin{align*}
+    |Ma_n - ML| = M|a_n - L| < M \times \frac{\epsilon}{M} = \epsilon
+\end{align*} \\
+By the definition of limits, this proves that $\{Ma_n\}_{n=1}^{\infty}$ tends to the limit $ML$.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{9}
+    Given an infinite collection $A_n$ , $n=1,2,...$ of intervals of the real line, their $intersection$ is defined to be
+    \begin{align*}
+        \bigcap\limits_{n=1}^{\infty} A_{n} = \{x|(\forall n)(x \in A_{n})\}
+    \end{align*}
+    Give an example of a family of intervals $A_n$, $n = 1,2,...$, such that $A_{n+1} \subset A_n$ for all n and ${\bigcap\limits}_{n=1}^{\infty}$ $A_n = \emptyset$. Prove that your example has the stated property.
+\end{problem}
+
+\begin{proof}
+Let the set $A_n$ be defined as $(0, \frac{1}{n})$
+
+For $n=1$,
+$$
+A_1 = (0,1)
+$$
+
+For $n+1$ i.e. $n=2$,
+$$
+A_2 = (0,\frac{1}{2})
+$$
+
+Since $(0,\frac{1}{2}) \subset (0,1)$, i.e. $A_2 \subset A_1$, $A_{n+1} \subset A_n$ holds.
+
+\hfill \break
+As $n\to\infty, \frac{1}{n}\to0$. So ${\bigcap\limits}_{n=1}^{\infty}$ $A_n = (0,0)$
+
+Since, the interval is exclusive, $0 \notin A_n$. The expression ${\bigcap\limits}_{n=1}^{\infty}$ $A_n$ will hence equate to $\emptyset$.
+
+\hfill \break
+Therefore, the example given has the required stated properties.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+\begin{problem}{10}
+    Give an example of a family of intervals $A_n$, $n = 1,2,...$, such that $A_{n+1} \subset A_n$ for all n and ${\bigcap\limits}_{n=1}^{\infty}$ $A_n$ consists of a single real number. Prove that your example has the stated property.
+\end{problem}
+
+\begin{proof}
+Let the set $A_n$ be defined as $[0, \frac{1}{n}]$
+
+For $n=1$,
+$$
+A_1 = [0,1]
+$$
+
+For $n+1$ i.e. $n=2$,
+$$
+A_2 = [0,\frac{1}{2}]
+$$
+
+Since $[0,\frac{1}{2}] \subset [0,1]$, i.e. $A_2 \subset A_1$, $A_{n+1} \subset A_n$ holds.
+
+\hfill \break
+As $n\to\infty, \frac{1}{n}\to0$. So ${\bigcap\limits}_{n=1}^{\infty}$ $A_n = [0,0]$
+
+Since, the interval is inclusive, $0 \in A_n$. The expression ${\bigcap\limits}_{n=1}^{\infty}$ $A_n$ will hence equate to 0. $0\in\R$
+
+\hfill \break
+Therefore, the example given has the required stated properties.
+\end{proof}
+
+\pagebreak
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = 
+ 
+\end{document}
